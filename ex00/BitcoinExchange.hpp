@@ -10,12 +10,16 @@
 # include <vector>
 # include <map>
 
-
 class BitcoinExchange
 {
 	private :
 		std::map <std::string, float> data;
 		std::string path;
+		void fillData();
+		void printMap();
+		void checkBalance();
+		float checkDate(std::string date);
+		std::map<std::string, float>::iterator findNearestDate(int year, int month, int day);
 	public :
 		BitcoinExchange();
 		BitcoinExchange(std::string pathcsv);
@@ -24,11 +28,6 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void func();
-		void fillData();
-		void printMap();
-		void checkBalance();
-		float checkDate(std::string date);
-		std::map<std::string, float>::iterator findNearestDate(int year, int month, int day);
 
 		std::string getPath() const;
 };
