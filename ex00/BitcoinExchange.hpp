@@ -27,8 +27,8 @@ class BitcoinExchange
 		void fillData();
 		void printMap();
 		void checkBalance();
-		std::string checkDate(std::string date);
-		std::string findNearestDate(int year, int month, int day);
+		float checkDate(std::string date);
+		std::map<std::string, float>::iterator findNearestDate(int year, int month, int day);
 
 		std::string getPath() const;
 };
